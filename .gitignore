@@ -1,0 +1,33 @@
+# Docker root env
+.env
+
+# Laravel
+laravel/vendor/
+laravel/node_modules/
+laravel/public/build/
+laravel/public/hot
+
+# Laravel env
+laravel/.env
+laravel/.env.*
+
+# Storage / cache
+laravel/storage/*.key
+laravel/storage/logs/*
+laravel/storage/framework/cache/*
+laravel/storage/framework/sessions/*
+laravel/storage/framework/views/*
+laravel/bootstrap/cache/*.php
+
+# Logs
+*.log
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Misc
+*.tmp
+*.swp
