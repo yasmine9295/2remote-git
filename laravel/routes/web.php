@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AtelierController;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+Route::get('/ateliers/programmes', [AtelierController::class, 'programmes']);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+Route::get('/ateliers/passes',[AtelierController::class, 'passes']);
 
 Route::get('/', function () {
     return view('welcome');
