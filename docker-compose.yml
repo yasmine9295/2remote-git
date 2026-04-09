@@ -1,5 +1,8 @@
+version: "3.9"
+
 services:
 
+  # PHP / Laravel
   app:
     build:
       context: .
@@ -7,24 +10,31 @@ services:
     container_name: laravel_app
     working_dir: /var/www/laravel
     volumes:
-      - .:/var/www
-    command: tail -f /dev/null   
+      - ./laravel:/var/www/laravel
+    environment:
+      TMP: /var/www/laravel/tmp
+      TMPDIR: /var/www/laravel/tmp
+      TEMP: /var/www/laravel/tmp
     networks:
       - laravel
+    ports:
+      - "9000:9000"  # php-fpm
 
+  # Nginx
   webserver:
     image: nginx:alpine
     container_name: laravel_nginx
     ports:
       - "8000:80"
     volumes:
-      - .:/var/www
+      - ./laravel:/var/www/laravel
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - app
     networks:
       - laravel
 
+  # MySQL
   db:
     image: mysql:8.0
     container_name: laravel_db
@@ -37,18 +47,24 @@ services:
       - "3307:3306"
     networks:
       - laravel
+    volumes:
+      - db_data:/var/lib/mysql
 
+  # Node (Vite / front)
   node:
     image: node:20-alpine
     container_name: laravel_node
     working_dir: /var/www/laravel
     volumes:
-      - .:/var/www
+      - ./laravel:/var/www/laravel
     ports:
       - "5173:5173"
     command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
     networks:
       - laravel
+
+volumes:
+  db_data:
 
 networks:
   laravel:
