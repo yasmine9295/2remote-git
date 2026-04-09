@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Espace client</title>
+    <title>Espace clientt</title>
 </head>
 <body>
     <h1>Bienvenue dans votre espace</h1>
