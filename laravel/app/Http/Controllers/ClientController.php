@@ -31,4 +31,8 @@ Class ClientController extends Controller {
     public function deconnecter(){
         return view('deconnecter') ;
     }
+
+    public function contact(){
+        return view('contact') ;
+    }
 }
