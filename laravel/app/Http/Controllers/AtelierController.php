@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 
 Class AtelierController extends Controller {
     public function programmes(){
-        return view('programmes');
+        return view('listeatelier');
     }
 
     public function passes(){
