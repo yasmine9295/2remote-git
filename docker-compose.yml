@@ -10,6 +10,7 @@ services:
     container_name: laravel_app
     working_dir: /var/www/laravel
     volumes:
+      - .:/var/www
       - ./laravel:/var/www/laravel
     environment:
       TMP: /var/www/laravel/tmp
