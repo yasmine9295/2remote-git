@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AtelierController;
+use App\Http\Controllers\ClientController;
+use Illuminate\Support\Facades\Route;
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 Route::get('/ateliers/programmes', [AtelierController::class, 'programmes']);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 Route::get('/ateliers/passes',[AtelierController::class, 'passes']);
