@@ -12,7 +12,6 @@ Il pourra ajouter, modifier, supprimer.
 ## Fonctionnalités
 
 * Ajouter une tâche
-* Afficher la liste des tâches
 * Modifier une tâche
 * Supprimer une tâche
 
